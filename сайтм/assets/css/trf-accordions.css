@@ -1,0 +1,84 @@
+
+.trf-according-list > fieldset {
+    font-size: var(--font-size-default);
+    padding: 0;
+    transition: var(--transition--static);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+.trf-according-list fieldset input[type=checkbox] {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+    margin: 0;
+}
+.trf-according-list fieldset input[type=checkbox]::before {
+	content: '';
+	display: inline-flex;
+    background: transparent;
+    height: 24px;
+    width: 24px;
+	border: 1px solid #AAAAAA;
+	position: absolute;
+    left: 0;
+    /*top: 10px;*/
+    transition: var(--transition--static);
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+.trf-according-list fieldset label:hover input[type=checkbox]::before,
+.trf-according-list fieldset input[type=checkbox]:checked::before {
+	border: 1px solid var(--color-primary);
+}
+.trf-according-list fieldset input[type=checkbox]::after {
+	content: "\f00c";
+    color: var(--color-secondary);
+    font-family: var(--font-family-icon);
+    font-weight: 900;
+	font-size: 24px;
+    line-height: 24px;
+    width: 16px;
+    height: 16px;
+	position: absolute;
+    left: 6px;
+    top: 2px;	
+    transition: var(--transition--static);
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.trf-according-list fieldset input[type=checkbox]:checked::after {
+    opacity: 1;
+}
+.trf-according-list fieldset input[type=checkbox]:checked + span {
+    color: var(--color-secondary);
+}
+.trf-according-list label[for*="mse2_"] {
+	display: flex;
+	position: relative;
+	min-height: 24px;
+	align-items: center;	
+	padding: 0 12px;
+	cursor: pointer;
+	margin-bottom: 8px;
+}
+.trf-according-list label[for*="mse2_"] > span {
+	margin-left: 32px;
+}
+.trf-according-list label[for*="mse2_"] > sup {
+	color: var(--color-secondary--extra-dark);
+	opacity: .7;
+	transform: translateY(-3px);
+}
+.trf-according-list label[for*="mse2_"] + br {
+	display: none;
+}
